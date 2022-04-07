@@ -6,6 +6,7 @@ import Home from './paginas/home/Home';
 import Login from './paginas/login/Login';
 import {Grid} from '@material-ui/core';
 import './App.css';
+import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
 
 function App() {
   return (
@@ -24,6 +25,10 @@ function App() {
           
           <Route path='/home'>
             <Home />
+          </Route>
+
+          <Route path='/cadastrousuario'>
+            <CadastroUsuario />
           </Route>
         </div>
       </Switch>
