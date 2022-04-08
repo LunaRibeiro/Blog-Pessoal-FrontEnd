@@ -2,38 +2,46 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './components/static/navbar/Navbar';
 import Footer from './components/static/footer/Footer';
+import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
 import Home from './paginas/home/Home';
 import Login from './paginas/login/Login';
-import {Grid} from '@material-ui/core';
 import './App.css';
-import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
+import ListaTema from './components/temas/listatema/ListaTema';
+import ListaPostagem from './components/postagens/listapostagem/ListaPostagem';
+
 
 function App() {
   return (
-   <Router>
-    <Navbar />
-      <Switch>
-        <div style={{minHeight: '63.8vh'}}>
+    <Router>
+      <Navbar />
+        <Switch>
+          <div style={{minHeight: '100vh'}}>
 
-          <Route exact path='/'>
-            <Login />
-          </Route>
+            <Route exact path='/'>
+              <Login />
+            </Route>
 
-          <Route path='/login'>
-            <Login />
-          </Route>
-          
-          <Route path='/home'>
-            <Home />
-          </Route>
+            <Route path='/login'>
+              <Login />
+            </Route>
 
-          <Route path='/cadastrousuario'>
-            <CadastroUsuario />
-          </Route>
-        </div>
-      </Switch>
-    <Footer />
-   </Router>
+            <Route path='/home'>
+              <Home />
+            </Route>
+            
+            <Route path='/cadastrousuario'>
+              <CadastroUsuario />
+            </Route>
+            <Route path='/temas'>
+              <ListaTema />
+            </Route>
+            <Route path='/posts'>
+              <ListaPostagem />
+            </Route>
+          </div>
+        </Switch>
+      <Footer />
+    </Router>
   );
 }
 
